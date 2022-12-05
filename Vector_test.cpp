@@ -20,7 +20,7 @@ void test01() {
 	v1.push_back(2);
 
 	v1.show();
-	//std::cout << "½»»»ºó" << std::endl;
+	//std::cout << "Â½Â»Â»Â»ÂºÃ³" << std::endl;
 	//v.swap(v1);
 	//v.show();
 	//v1.show();
