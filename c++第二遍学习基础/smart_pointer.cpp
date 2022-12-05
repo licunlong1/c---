@@ -108,12 +108,12 @@ int main() {
 	//p2.reset(new Int(100));
 	//p2->PrintInfo();
 
-	//Int* p = p2.release(); //ÕâÀïµÄp2ÒÑ¾­ÊÇNULLÁË
+	//Int* p = p2.release(); //è¿™é‡Œçš„p2å·²ç»æ˜¯NULLäº†
 
 	////p2->PrintInfo();  error
 	//p->PrintInfo();
 
-	//p1.swap(p2);//  ½»»»Ö®ºó  p1Îª¿Õ  p2²»Îª¿Õ
+	//p1.swap(p2);//  äº¤æ¢ä¹‹å  p1ä¸ºç©º  p2ä¸ä¸ºç©º
 	//p2->PrintInfo();
 	////p1->PrintInfo();//error
 	
@@ -127,9 +127,9 @@ int main() {
 	//std::cout << i_u_p1.get() << endl;
 	//std::cout << &i_u_p1<< endl;
 
-	//func1(std::move(i_u_p1));//¶ÀÕ¼Ö¸Õë´«Èëº¯ÊıµÄÊ±ºòÒ»¶¨ÒªÓÃmove 
+	//func1(std::move(i_u_p1));//ç‹¬å æŒ‡é’ˆä¼ å…¥å‡½æ•°çš„æ—¶å€™ä¸€å®šè¦ç”¨move 
 
-	//func2(i_u_p2);//¶ÀÕ¼Ö¸Õë´«Èëº¯ÊıµÄÊ±ºòÒ»¶¨ÒªÓÃmove 
+	//func2(i_u_p2);//ç‹¬å æŒ‡é’ˆä¼ å…¥å‡½æ•°çš„æ—¶å€™ä¸€å®šè¦ç”¨move 
 
 	//lcl::shared_ptr<int> s_p1(new int(10));
 
@@ -200,7 +200,7 @@ int main() {
 
 
 
-//lambda±í´ïÊ½µÄÔËÓÃ
+//lambdaè¡¨è¾¾å¼çš„è¿ç”¨
 
 //int main() {
 //
