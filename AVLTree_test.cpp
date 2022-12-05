@@ -17,12 +17,12 @@ void test01() {
 	tree.show_AVLTree();
 	TreeNode<int>* cur = tree.find(129);
 	if (cur) {
-		cout << "ÕÒµ½ÁË" << endl;
+		cout << "æ‰¾åˆ°äº†" << endl;
 	}
 	int temp;
 	while (true) {
 		tree.print_AVLTree();
-		cout << "ÇëÊäÈëÄãÒªÉ¾³ý½Úµã±êÊ¶µÄÖµ£º";
+		cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤èŠ‚ç‚¹æ ‡è¯†çš„å€¼ï¼š";
 		cin >> temp;
 		tree.erase(temp);
 		//tree.show_AVLTree();
@@ -44,16 +44,16 @@ void test02() {
 	int end1 = clock();
 	cout << end1 - begin1 << endl;
 	if (tree.is_balancedbinarytree()) {
-		cout << "ÊÇÆ½ºâÊ÷" << endl;
+		cout << "æ˜¯å¹³è¡¡æ ‘" << endl;
 	}
 
 
 	//while (true) {
 	//	tree.print_AVLTree();
-	//	//ÖÐÐò±éÀú¾ÍÊÇÉýÐò
+	//	//ä¸­åºéåŽ†å°±æ˜¯å‡åº
 	//	tree.show_AVLTree();
 
-	//	cout << "ÇëÊäÈëÄãÒªÉ¾³ý½Úµã±êÊ¶µÄÖµ£º";
+	//	cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤èŠ‚ç‚¹æ ‡è¯†çš„å€¼ï¼š";
 	//	cin >> temp;
 	//	tree.erase(temp);
 	//	//tree.show_AVLTree();
