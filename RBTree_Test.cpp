@@ -13,7 +13,7 @@ void test01() {
 	while (1) {
 		tree.print_RBTree();
 		tree.show_RBTree();
-		cout << "ÇëÊäÈëÄãÒª²åÈë½ÚµãµÄÊý¾Ý£º" << endl;
+		cout << "è¯·è¾“å…¥ä½ è¦æ’å…¥èŠ‚ç‚¹çš„æ•°æ®ï¼š" << endl;
 		cin >> temp;
 		tree.insert(temp);
 		system("pause");
@@ -38,7 +38,7 @@ void test02() {
 	while (1) {
 		tree.print_RBTree();
 		tree.show_RBTree();
-		cout << "ÇëÊäÈëÄãÒªÉ¾³ý½ÚµãµÄÊý¾Ý£º" << endl;
+		cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤èŠ‚ç‚¹çš„æ•°æ®ï¼š" << endl;
 		cin >> temp;
 		tree.erase(temp);
 		system("pause");
