@@ -3,8 +3,8 @@
 #include<vector>
 
 
-#define MAX 101   //ÈİÁ¿
-#define MYNULL -1 //±êÊ¶ ÊÇ·ñÎª¿Õ
+#define MAX 101   //å®¹é‡
+#define MYNULL -1 //æ ‡è¯† æ˜¯å¦ä¸ºç©º
 
 template <typename T>
 class List;
@@ -14,8 +14,8 @@ class Node {
 	friend class List<T>;
 
 private:
-	T _data; //Êı¾İ
-	int _next; //¼ÇÂ¼ÏÂ±ê
+	T _data; //æ•°æ®
+	int _next; //è®°å½•ä¸‹æ ‡
 
 	Node<T>& operator = (Node<T>& other) {
 		_data = other._data;
@@ -39,20 +39,20 @@ public:
 
 private:
 	std::vector<Node<T>> v;
-	int _size;     //Á´±í³¤¶È
-	int fail;      //Î²±êÊ¶  ¼ÇÂ¼ÉÏÒ»¸ö²åÈëµÄÎ»ÖÃÏÂ±ê
+	int _size;     //é“¾è¡¨é•¿åº¦
+	int fail;      //å°¾æ ‡è¯†  è®°å½•ä¸Šä¸€ä¸ªæ’å…¥çš„ä½ç½®ä¸‹æ ‡
 };
 
 template <typename T>
 List<T>::List() {
 	_size = 0;
-	//ÖØĞÂÖ¸¶¨´óĞ¡
+	//é‡æ–°æŒ‡å®šå¤§å°
 	v.resize(MAX);
 	for (int i = 0; i < MAX - 1; i++) {
 		v[i]._next = MYNULL;
 	}
-	v[MAX - 1]._next = MYNULL;//×îºóÒ»¸öÎ»ÖÃµÄ_nextµ±Á´±íÍ·
-	fail = MYNULL;            //Î²²¿±íÊ¾ Ò»¿ªÊ¼µÈÓÚ-1
+	v[MAX - 1]._next = MYNULL;//æœ€åä¸€ä¸ªä½ç½®çš„_nextå½“é“¾è¡¨å¤´
+	fail = MYNULL;            //å°¾éƒ¨è¡¨ç¤º ä¸€å¼€å§‹ç­‰äº-1
 }
 
 template <typename T>
@@ -83,22 +83,22 @@ void List<T>::insert(int pos,T value) {
 template <typename T>
 void List<T>::erase(T& value) {
 
-	//É¾³ı   ¸ù¾İÊäÈëµÄÏÂ±ê½øĞĞÉ¾³ı
+	//åˆ é™¤   æ ¹æ®è¾“å…¥çš„ä¸‹æ ‡è¿›è¡Œåˆ é™¤
 	//
 	//if (pos >= 0 && pos < MAX - 1) {
-	//	//Èç¹û²»ÊÇÎ²²¢ÇÒ_next Îª MYNULL  ÄÇÃ´¸ÃÎ»ÖÃÃ»ÓĞÊı¾İ
+	//	//å¦‚æœä¸æ˜¯å°¾å¹¶ä¸”_next ä¸º MYNULL  é‚£ä¹ˆè¯¥ä½ç½®æ²¡æœ‰æ•°æ®
 	//	if (v[pos]._next == MYNULL && fail != pos) {
 	//		std::cout << "no data at this location!" << std::endl;
 	//	}
 	//	else {
-	//		//ÕÒµ½Í·Î»ÖÃ
+	//		//æ‰¾åˆ°å¤´ä½ç½®
 	//		int cur = MAX - 1;
 	//		while (v[cur]._next != pos) {
 	//			cur = v[cur]._next;
 	//		}
 	//		v[cur]._next = v[pos]._next;
 
-	//		//ÅĞ¶ÁÊÇ·ñĞèÒª¸üĞÂÎ²±êÊ¶  É¾³ıµÄÊÇÎ²²¿ ¸üĞÂÎ²²¿Ö¸Ïò±êÊ¶
+	//		//åˆ¤è¯»æ˜¯å¦éœ€è¦æ›´æ–°å°¾æ ‡è¯†  åˆ é™¤çš„æ˜¯å°¾éƒ¨ æ›´æ–°å°¾éƒ¨æŒ‡å‘æ ‡è¯†
 	//		if (fail == pos) {
 	//			fail = cur;
 	//		}
@@ -110,21 +110,21 @@ void List<T>::erase(T& value) {
 
 
 
-	//É¾³ı   ¸ù¾İÊäÈëµÄÖµ½øĞĞÉ¾³ı
+	//åˆ é™¤   æ ¹æ®è¾“å…¥çš„å€¼è¿›è¡Œåˆ é™¤
 	
-	//ÕÒµ½Í·Î»ÖÃ
+	//æ‰¾åˆ°å¤´ä½ç½®
 	int cur = MAX - 1;
 	int prev = cur;
 	while (v[cur]._data != value && cur != fail) {
 		prev = cur;
 		cur = v[cur]._next;
 	}
-	//Èç¹ûÕÒµ½Î²²¿ÁË ÄÇËµÃ÷Ã»ÓĞÕÒµ½Õâ¸öÊı¾İ ÌáÊ¾
+	//å¦‚æœæ‰¾åˆ°å°¾éƒ¨äº† é‚£è¯´æ˜æ²¡æœ‰æ‰¾åˆ°è¿™ä¸ªæ•°æ® æç¤º
 	if (v[cur]._data != value && cur == fail) {
 		std::cout << "no find data!" << std::endl;
 	}
 	else {
-		//ÅĞ¶ÁÊÇ·ñĞèÒª¸üĞÂÎ²±êÊ¶  É¾³ıµÄÊÇÎ²²¿ ¸üĞÂÎ²²¿Ö¸Ïò±êÊ¶
+		//åˆ¤è¯»æ˜¯å¦éœ€è¦æ›´æ–°å°¾æ ‡è¯†  åˆ é™¤çš„æ˜¯å°¾éƒ¨ æ›´æ–°å°¾éƒ¨æŒ‡å‘æ ‡è¯†
 		if (v[fail]._data == value) {
 			fail = prev;
 		}
@@ -136,12 +136,12 @@ void List<T>::erase(T& value) {
 
 template <typename T>
 int List<T>::find(T& value) {
-	//ÕÒµ½Í·Î»ÖÃ
+	//æ‰¾åˆ°å¤´ä½ç½®
 	int cur = MAX - 1;
 	while (v[cur]._data != value && cur != fail) {
 		cur = v[cur]._next;
 	}
-	//Èç¹ûÕÒµ½Î²²¿ÁË ÄÇËµÃ÷Ã»ÓĞÕÒµ½Õâ¸öÊı¾İ ÌáÊ¾
+	//å¦‚æœæ‰¾åˆ°å°¾éƒ¨äº† é‚£è¯´æ˜æ²¡æœ‰æ‰¾åˆ°è¿™ä¸ªæ•°æ® æç¤º
 	if (v[cur]._data != value && cur == fail) {
 		std::cout << "no find data!" << std::endl;
 		return MYNULL;
@@ -177,16 +177,16 @@ void test01() {
 	while (1) {
 		L.showList();
 		int val;
-		//std::cout << "ÇëÊäÈëÄãÒªÉ¾³ıµÄÎ»ÖÃ£¨ÏÂ±ê£©:";
-		std::cout << "ÇëÊäÈëÄãÒªÉ¾³ıµÄÖµ:";
+		//std::cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„ä½ç½®ï¼ˆä¸‹æ ‡ï¼‰:";
+		std::cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„å€¼:";
 		std::cin >> val;
 		L.erase(val);
 		L.showList();
 
 
 		int val1;
-		//std::cout << "ÇëÊäÈëÄãÒªÉ¾³ıµÄÎ»ÖÃ£¨ÏÂ±ê£©:";
-		std::cout << "ÇëÊäÈëÄãÒª²éÕÒµÄÖµ:";
+		//std::cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„ä½ç½®ï¼ˆä¸‹æ ‡ï¼‰:";
+		std::cout << "è¯·è¾“å…¥ä½ è¦æŸ¥æ‰¾çš„å€¼:";
 		std::cin >> val1;
 		if (L.find(val1) != MYNULL) {
 			std::cout << " find!!! pos is :" << L.find(val1) << std::endl;
